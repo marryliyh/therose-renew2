@@ -78,7 +78,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           RUNS=$(gh run list \
-            --workflow "renew-therose.yml" \
+            --workflow "main.yml" \
             --limit 100 \
             --json databaseId \
             --jq '.[].databaseId')
