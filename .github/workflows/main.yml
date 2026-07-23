@@ -1,7 +1,9 @@
 name: Auto Renew The Rose Cloud
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:           # 保留手动触发
+  repository_dispatch:
+    types: [cloudflare_cron_trigger]  # 与 Worker 中的 event_type 一致
 
 concurrency:
   group: renew-therose
